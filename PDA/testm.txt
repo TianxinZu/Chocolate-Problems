@@ -1,0 +1,39 @@
+{0,(,~} -> {-,(,0}
+{1,(,~} -> {-,~,6}
+{2,(,~} -> {-,~,6}
+{3,(,~} -> {-,(,0}
+{4,(,~} -> {-,~,6}
+{0,0,~} -> {-,~,1}
+{1,0,~} -> {-,~,1}
+{2,0,~} -> {-,~,6}
+{3,0,~} -> {-,~,1}
+{4,0,~} -> {-,~,6}
+{0,a,~} -> {-,~,2}
+{1,a,~} -> {-,~,6}
+{2,a,~} -> {-,~,2}
+{3,a,~} -> {-,~,2}
+{4,a,~} -> {-,~,6}
+{0,+,~} -> {-,~,6}
+{1,+,~} -> {-,~,3}
+{2,+,~} -> {-,~,3}
+{3,+,~} -> {-,~,6}
+{4,+,~} -> {-,~,3}
+{0,),~} -> {-,~,6} //cannot have empty parentheses or ) at start
+{1,),(} -> {+,~,4}
+{1,),-} -> {-,~,6}
+{2,),(} -> {+,~,4}
+{2,),-} -> {-,~,6}
+{3,),~} -> {-,~,6}
+{4,),(} -> {+,~,4}
+{4,),-} -> {-,~,6}
+(hello2+world1)
+
+command: {char1,char2,char3} -> {char4,char5,char6}
+char1: state in, 
+char2: read input ('a' represents letters, '0' represents numbers, '+' represents operational signs),
+char3: see what on the top of the stack ('~' represents no matter what's on the stack, '-' means stack is empty),
+char4: '+' means pop from the stackm '-' means do nothing,
+char5: add that char to the stack, '~' means do nothing,
+char6: enter and update this state.
+
+state 6 means end the program with No. 

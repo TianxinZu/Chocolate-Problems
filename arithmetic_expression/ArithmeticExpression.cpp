@@ -27,12 +27,12 @@ int main()
         }
         else if (x >= 48 && x <= 57) //numbers
         {
-            if (after)
+            if (after) //numbers cannot appear right after ')'
             {
                 fail = true;
                 break;
             }
-            else if (!buffer.empty() && buffer.top() >= 97)
+            else if (!buffer.empty() && buffer.top() >= 97) //number cannot appear right after letters
             {
                 fail = true;
                 break;
@@ -47,7 +47,7 @@ int main()
                 fail = true;
                 break;
             }
-            if (!buffer.empty() && buffer.top() >= 48 && buffer.top() <= 57) 
+            if (!buffer.empty() && buffer.top() >= 48 && buffer.top() <= 57) // letters cannot appear right after numbers
             {
                 fail = true;
                 break;
@@ -57,7 +57,7 @@ int main()
         }
         else if (x >= 42 && x <= 47) //operation signs
         {
-            if (!buffer.empty() && buffer.top() >= 42 && buffer.top() <= 47)
+            if (!buffer.empty() && buffer.top() >= 42 && buffer.top() <= 47) //operation signs cannot appear right after itself
             {
                 fail = true;
                 break;
@@ -67,22 +67,22 @@ int main()
         }
         else if (x == ')')
         {
-            if (!buffer.empty() && buffer.top() >= 42 && buffer.top() <= 47)
+            if (!buffer.empty() && buffer.top() >= 42 && buffer.top() <= 47) //')' cannot appear right after operation signs
             {
                 fail = true;
                 break;
             }
-            while (buffer.size() > 0 && buffer.top() != '(')
+            while (buffer.size() > 0 && buffer.top() != '(') //find the pairs
             {
                 buffer.pop();
             }
-            if (buffer.size() == 0)
+            if (buffer.size() == 0) //extra ')'
             {
                 fail = true;
                 break;
             }
             buffer.pop();
-            if (!buffer.empty() && buffer.top() >= 42 && buffer.top() <= 47)
+            if (!buffer.empty() && buffer.top() >= 42 && buffer.top() <= 47) //pop the operation sign before the parenthesis
             {
                 buffer.pop();
             }
@@ -93,7 +93,7 @@ int main()
         ss >> x;
     }
 
-    while (buffer.size() > 0 && buffer.top() != '(')
+    while (buffer.size() > 0 && buffer.top() != '(') //remove elements beside '('
     {
         buffer.pop();
     }
@@ -102,7 +102,7 @@ int main()
     {
         cout << "Yes" << endl;
     }
-    else 
+    else //extra '('
     {
         cout << "No" << endl;
     }

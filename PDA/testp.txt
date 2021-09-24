@@ -1,0 +1,19 @@
+{0,(,~} -> {-,(,0}
+{0,),(} -> {+,~,0}
+{0,),-} -> {-,~,6}
+{0,),[} -> {-,~,6}
+{0,[,~} -> {-,[,0}
+{0,],-} -> {-,~,6}
+{0,],(} -> {-,~,6}
+{0,],[} -> {+,~,0}
+[([()]()[()])[]]
+
+command: {char1,char2,char3} -> {char4,char5,char6}
+char1: state in, 
+char2: read input, 
+char3: see what on the top of the stack ('-' means stack is empty, '~' means no matter what's on the stack), 
+char4: '+' means pop from stack and '-' means do nothing, 
+char5: add char to stack('~' means add nothing), 
+char6: enter and update this state. 
+
+state 6 means end the program with No. 
