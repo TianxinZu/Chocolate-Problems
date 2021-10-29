@@ -1,4 +1,4 @@
-# PDA (Pushdown Automata)
+## PDA (Pushdown Automata)
 
 This is a simulation of PDA interpreter. The Intepreter can accept commands and return true when the given expression is valid.
 
